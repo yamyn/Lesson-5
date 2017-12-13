@@ -9,8 +9,9 @@ public class Main {
                 "1 - Choose a door and window");
         Scanner scanner = new Scanner(System.in);
         int choose = scanner.nextInt();
-        switch (choose){
+        switch (choose){//switch, that choose task
             case 1:
+//................................................................A call Cardoor
                 CarDoor cardoor1 = new CarDoor();
                 int repeat = 1;
                 while (repeat == 1) {
@@ -51,8 +52,11 @@ public class Main {
                     repeat = scanner.nextInt();
             }
                 break;
+//............................................................................The call CarWheel
             case 2:
-
+                System.out.println("Write the condition of the bus: \n" +
+                        "(from 0.1 to 1)");
+                float status = scanner.nextFloat();
         }
 
     }

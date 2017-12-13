@@ -1,28 +1,18 @@
 package Car_Characteristic;
 
-public class CarDoor {
+public class CarDoor {//This class control door and window
     public String door;
     public String window;
-
-    /*public CarDoor(){
-        this("closed", "closed" );
-    }
-
-
-    public CarDoor(String door, String window){
-        this.door = door;
-        this.window = window;
-    }*/
-
-
+//.................................................Constructor
     public CarDoor (){
         this("cloased", "cloased");
     }
+
     public CarDoor (String door, String window){
         this.door = door;
         this.window = window;
     }
-
+//................................................Control door
 
     public void opendoor(){
         this.door ="open";
@@ -42,6 +32,7 @@ public class CarDoor {
             show();
         }
     }
+//...................................................Control window
     public void openwindow(){
         this.window ="open";
         show();
@@ -60,7 +51,7 @@ public class CarDoor {
             show();
         }
     }
-
+//.....................................................Show to consol configurations
     public void show(){
         System.out.println("The door was " + door + " and window is " + window);
     }
