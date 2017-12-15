@@ -56,48 +56,8 @@ public class Main {
                 break;
 //............................................................................The call CarWheel
             case 2:
-                Car car = new Car();
-                int reapetw = 1;
-                while (reapetw ==1){
-                    System.out.println("Write the condition of the tire: \n" +
-                            "(from 0,1 to 1)");
-                    float status = scanner.nextFloat();
-                    carwheel1.setCondition(status);
-                    int reapetin = 1;
-                    while (reapetin == 1) {
-                            System.out.println("Do you want to replace the tire to a new one? - 1 \n" +
-                                    "Erase the tire by? - 2\n" +
-                                    "(write the level of erase in percent) \n" +
-                                    "To show object parametres? - 3");
-                            int choosewheel = scanner.nextInt();
-                            switch (choosewheel) {
-                                case 1:
-                                    carwheel1.newWheel();
-                                    carwheel1.askshow();
-                                    break;
-                                case 2:
-                                    System.out.println("Please, write percent of erase: ");
-                                    int percent = scanner.nextInt();
-                                    carwheel1.usewheel(percent);
-                                    carwheel1.askshow();
-                                    break;
-                                case 3:
-                                    carwheel1.show();
-                                    break;
-                                default:
-                                    System.out.println("Invalid number");
-                            }
-                            System.out.println();
-                            System.out.println("Choose the wheel again? \n" +
-                                "1 - Yes \n" +
-                                "2 - No");
-                            reapetin = scanner.nextInt();
-                        }
-                        System.out.println("Choose other wheel? \n" +
-                            "1 - Yes \n" +
-                            "2 - No");
-                        reapetw = scanner.nextInt();
-                    }
+               Car car = new Car();
+               car.wheels();
             case 3:
 
         }
