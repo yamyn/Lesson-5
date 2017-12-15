@@ -6,7 +6,9 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hi!");
         System.out.println("what do you want to do? \n" +
-                "1 - Choose a door and window");
+                "1 - Choose a door and window \n" +
+                "2 - Choose a wheel \n" +
+                "3 - Information about car");
         Scanner scanner = new Scanner(System.in);
         int choose = scanner.nextInt();
         switch (choose){//switch, that choose task
@@ -50,13 +52,54 @@ public class Main {
                             "1 - Yes \n" +
                             "2 - No");
                     repeat = scanner.nextInt();
-            }
+                }
                 break;
 //............................................................................The call CarWheel
             case 2:
-                System.out.println("Write the condition of the bus: \n" +
-                        "(from 0.1 to 1)");
-                float status = scanner.nextFloat();
+                Car car = new Car();
+                int reapetw = 1;
+                while (reapetw ==1){
+                    System.out.println("Write the condition of the tire: \n" +
+                            "(from 0,1 to 1)");
+                    float status = scanner.nextFloat();
+                    carwheel1.setCondition(status);
+                    int reapetin = 1;
+                    while (reapetin == 1) {
+                            System.out.println("Do you want to replace the tire to a new one? - 1 \n" +
+                                    "Erase the tire by? - 2\n" +
+                                    "(write the level of erase in percent) \n" +
+                                    "To show object parametres? - 3");
+                            int choosewheel = scanner.nextInt();
+                            switch (choosewheel) {
+                                case 1:
+                                    carwheel1.newWheel();
+                                    carwheel1.askshow();
+                                    break;
+                                case 2:
+                                    System.out.println("Please, write percent of erase: ");
+                                    int percent = scanner.nextInt();
+                                    carwheel1.usewheel(percent);
+                                    carwheel1.askshow();
+                                    break;
+                                case 3:
+                                    carwheel1.show();
+                                    break;
+                                default:
+                                    System.out.println("Invalid number");
+                            }
+                            System.out.println();
+                            System.out.println("Choose the wheel again? \n" +
+                                "1 - Yes \n" +
+                                "2 - No");
+                            reapetin = scanner.nextInt();
+                        }
+                        System.out.println("Choose other wheel? \n" +
+                            "1 - Yes \n" +
+                            "2 - No");
+                        reapetw = scanner.nextInt();
+                    }
+            case 3:
+
         }
 
     }

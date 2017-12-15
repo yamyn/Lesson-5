@@ -1,8 +1,8 @@
 package Car_Characteristic;
 
 public class CarDoor {//This class control door and window
-    public String door;
-    public String window;
+    private String door;
+    private String window;
 //.................................................Constructor
     public CarDoor (){
         this("cloased", "cloased");
@@ -53,6 +53,6 @@ public class CarDoor {//This class control door and window
     }
 //.....................................................Show to consol configurations
     public void show(){
-        System.out.println("The door was " + door + " and window is " + window);
+        System.out.println("The door is " + door + " and window is " + window);
     }
 }
