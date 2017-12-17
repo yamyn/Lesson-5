@@ -109,7 +109,41 @@ public class Car {
     public void nowpeoplleShow (){
         System.out.println("Number of passengers inside the car is " + getNowpeoplle());
     }
-//...............................................................
+//...............................................................The Work for array door
+    public CarDoor[] door = {
+        new CarDoor(),
+        new CarDoor(),
+        new CarDoor(),
+        new CarDoor(),
+        new CarDoor(),
+    };
+    public void doors (int doorchoose){
+        int repeate = 1;
+        while (repeate == 1) {
+            System.out.println("Do you want open door? - 1 \n" +
+                    "Do you want closed door? - 2 \n" +
+                    "Do you want to change the position of the door? - 3 \n" +
+                    "(to defeult is closed)");
+            int choosedoor = scanner.nextInt();
+            switch (choosedoor){
+                case 1:
+                    door[doorchoose].opendoor();
+                    break;
+                case 2:
+                    door[doorchoose].closeddoor();
+                    break;
+                case 3:
+                    door[doorchoose].positiondoor();
+                    break;
+                default:
+                    System.out.println("Invalid number");
+            }
+            System.out.println("Choose the door  again \n" +
+                    "1 - Yes \n" +
+                    "2 - No");
+            repeate = scanner.nextInt();
+        }
+    }
     /*public void numberwheel (){
         //System.out.println("Do you want to add few wheels?");
         System.out.println("How many wheels you want to add: ");

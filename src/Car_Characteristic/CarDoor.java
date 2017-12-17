@@ -16,43 +16,46 @@ public class CarDoor {//This class control door and window
 
     public void opendoor(){
         this.door ="open";
-        show();
+        showdoor();
     }
     public void closeddoor(){
         this.door = "closed";
-        show();
+        showdoor();
     }
 
     public void positiondoor(){
         if (door == "closed"){
             this.door = "open";
-            show();
+            showdoor();
         }else if (door == "open"){
             this.door = "closed";
-            show();
+            showdoor();
         }
     }
 //...................................................Control window
     public void openwindow(){
         this.window ="open";
-        show();
+        showwindow();
     }
     public void closewindow(){
         this.window = "closed";
-        show();
+        showwindow();
     }
 
     public void positionwindow(){
         if (window == "closed"){
             this.window = "open";
-            show();
+            showwindow();
         }else if (window == "open"){
             this.window = "closed";
-            show();
+            showwindow();
         }
     }
 //.....................................................Show to consol configurations
-    public void show(){
-        System.out.println("The door is " + door + " and window is " + window);
+    public void showdoor (){
+        System.out.println("The door is " + door);
+    }
+    public void showwindow(){
+        System.out.println("The window is " + window);
     }
 }

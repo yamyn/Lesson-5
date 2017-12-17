@@ -20,7 +20,8 @@ public class Main {
                     "2 - To put a passenger in the car \n" +
                     "3 - Disembark a passenger from the car \n" +
                     "4 - Disembark all passengers from the car \n" +
-                    "5 - Calculate the current possible maximum speed");
+                    "5 - Calculate the current possible maximum speed \n" +
+                    "6 - Choose door and act with it");
             Scanner scanner = new Scanner(System.in);
             int choose = scanner.nextInt();
             switch (choose) {//switch, that choose task
@@ -38,54 +39,19 @@ public class Main {
                     break;
                 case 5:
                     car.maxpossiblespeed();
+                    break;
+                case 6:
+                    System.out.println("Please, choose door \n" +
+                            "(To write number wheel from 1 to 5, where 5 is trunk lid)");
+                    int doorchoose = scanner.nextInt();
+                    car.doors(doorchoose);
             }
             System.out.println("Continue acts in this car? \n" +
                     "1 - Yes \n" +
                     "2 - No");
             repeattask = scanner.nextInt();
         }
-//................................................................A call Cardoor
-                /*CarDoor cardoor1 = new CarDoor();
-                int repeat = 1;
-                while (repeat == 1) {
-                    System.out.println("Do you want open door? - 1 \n" +
-                            "Do you want closed door? - 2 \n" +
-                            "Do you want to change the position of the door? - 3 \n" +
-                            "(to defeult is closed) \n" +
-                            "Do you want open window? - 4 \n" +
-                            "Do you want closed window? - 5 \n" +
-                            "Do you want to change the position of the wndow? - 6 \n" +
-                            "(to defeult is closed)");
-                    int choosedoor = scanner.nextInt();
-                    switch (choosedoor){
-                        case 1:
-                            cardoor1.opendoor();
-                            break;
-                        case 2:
-                            cardoor1.closeddoor();
-                            break;
-                        case 3:
-                            cardoor1.positiondoor();
-                            break;
-                        case 4:
-                            cardoor1.openwindow();
-                            break;
-                        case 5:
-                            cardoor1.closewindow();
-                            break;
-                        case 6:
-                            cardoor1.positionwindow();
-                            break;
-                        default:
-                            System.out.println("Invalid number");
-                    }
-                    System.out.println("Choose the door and window again \n" +
-                            "1 - Yes \n" +
-                            "2 - No");
-                    repeat = scanner.nextInt();
-                }
-                break;*/
-//............................................................................The call CarWheel
+
 
 
 
