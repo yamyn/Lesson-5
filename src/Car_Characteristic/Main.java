@@ -12,20 +12,38 @@ public class Main {
         car.timeto100();
         car.maxpeopl();
         car.nowpeoplle();
-        System.out.println("what do you want to do? \n" +
-                "1 - Change current speed \n" +
-                "(60km/h is default) \n" +
-                "2 - To put a passenger in the car \n" +
-                "3 - Disembark a passenger from the car \n" +
-                "4 - Disembark all passengers from the car");
-        Scanner scanner = new Scanner(System.in);
-        int choose = scanner.nextInt();
-        switch (choose){//switch, that choose task
-            case 1:
-                car.speedask();
-                break;
-            case 2:
-
+        int repeattask = 1;
+        while (repeattask ==1) {
+            System.out.println("what do you want to do? \n" +
+                    "1 - Change current speed \n" +
+                    "(60km/h is default) \n" +
+                    "2 - To put a passenger in the car \n" +
+                    "3 - Disembark a passenger from the car \n" +
+                    "4 - Disembark all passengers from the car \n" +
+                    "5 - Calculate the current possible maximum speed");
+            Scanner scanner = new Scanner(System.in);
+            int choose = scanner.nextInt();
+            switch (choose) {//switch, that choose task
+                case 1:
+                    car.speedask();
+                    break;
+                case 2:
+                    car.changepeoplle(1);
+                    break;
+                case 3:
+                    car.changepeoplle(-1);
+                    break;
+                case 4:
+                    car.changepeoplle(-car.getNowpeoplle());
+                    break;
+                case 5:
+                    car.maxpossiblespeed();
+            }
+            System.out.println("Continue acts in this car? \n" +
+                    "1 - Yes \n" +
+                    "2 - No");
+            repeattask = scanner.nextInt();
+        }
 //................................................................A call Cardoor
                 /*CarDoor cardoor1 = new CarDoor();
                 int repeat = 1;
@@ -70,7 +88,7 @@ public class Main {
 //............................................................................The call CarWheel
 
 
-        }
+
 
     }
 }

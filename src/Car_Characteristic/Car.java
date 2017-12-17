@@ -56,6 +56,10 @@ public class Car {
         System.out.println("Write current speed of the car (km/h)");
         this.speed = scanner.nextInt();
     }
+//..............................................................Calculate the current possible maximum speed
+    public void maxpossiblespeed (){
+
+    }
     public void speedShow (){
         System.out.println("Current speed is " + getSpeed() + "km/h ");
     }
@@ -93,8 +97,14 @@ public class Car {
         System.out.println("Write number of passengers inside the car ");
         this.nowpeoplle = scanner.nextInt();
     }
-    public void pluspeoplle (){
-        int pluspas = this.nowpeoplle + 
+
+    public void changepeoplle (int xpas){
+        int newpas = this.nowpeoplle + xpas;
+        if (newpas <= this.maxpeoplle){//Control number of passenger
+            this.nowpeoplle = newpas;
+            } else {
+            System.out.println("There are no more seats in the car!");
+            }
     }
     public void nowpeoplleShow (){
         System.out.println("Number of passengers inside the car is " + getNowpeoplle());
