@@ -22,7 +22,8 @@ public class Main {
                     "4 - Disembark all passengers from the car \n" +
                     "5 - Calculate the current possible maximum speed \n" +
                     "6 - Choose door and act with it \n" +
-                    "7 - Choose window and act with it");
+                    "7 - Choose window and act with it \n" +
+                    "8 - Choose wheel and act with it");
             Scanner scanner = new Scanner(System.in);
             int choose = scanner.nextInt();
             switch (choose) {//switch, that choose task
@@ -54,11 +55,32 @@ public class Main {
                     int windowchoose = scanner.nextInt();
                     car.windows(windowchoose);
                     break;
+                case 8:
+                    System.out.println("What need to does with wheel? \n" +
+                            "1 - Calculate the condition of the tire \n" +
+                            "2 - Remove all wheels from the car \n" +
+                            "3 - Installation of new wheels on the car \n" +
+                            "4 - Information about wheels");
+                    int chooseWheelTask = scanner.nextInt();
+                    switch (chooseWheelTask){
+                        case 1:
+                            car.wheels();
+                            break;
+                        case 2:
+                            car.wheelRemove();
+                            break;
+                        case 3:
+
+                    }
+                    break;
+                case 9:
+
             }
             System.out.println("Continue acts in this car? \n" +
                     "1 - Yes \n" +
                     "2 - No");
             repeattask = scanner.nextInt();
+
         }
 
 

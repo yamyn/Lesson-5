@@ -12,6 +12,12 @@ public class CarDoor {//This class control door and window
         this.door = door;
         this.window = window;
     }
+    public String getDoor(){
+        return door;
+    }
+    public String getWindow(){
+        return window;
+    }
 //................................................Control door
 
     public void opendoor(){

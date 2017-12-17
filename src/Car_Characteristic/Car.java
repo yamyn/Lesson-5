@@ -11,6 +11,7 @@ public class Car {
     private int maxpeoplle;
     private int nowpeoplle;
     private int speed = 60;
+    private int removeWheel = 0;
 //.................................................... for date
     public String getDateofmade (){
         return dateMade;
@@ -56,10 +57,7 @@ public class Car {
         System.out.println("Write current speed of the car (km/h)");
         this.speed = scanner.nextInt();
     }
-//..............................................................Calculate the current possible maximum speed
-    public void maxpossiblespeed (){
 
-    }
     public void speedShow (){
         System.out.println("Current speed is " + getSpeed() + "km/h ");
     }
@@ -117,7 +115,8 @@ public class Car {
         new CarDoor(),
         new CarDoor(),
     };
-    public void doors (int doorchoose){
+    public void doors (int doorChs){
+        int doorchoose = doorChs - 1;
         int drepeat = 1;
         while (drepeat == 1) {
             System.out.println("Do you want open door? - 1 \n" +
@@ -144,6 +143,12 @@ public class Car {
             drepeat = scanner.nextInt();
         }
     }
+    public void doorShow (){
+        for (int i = 0; i < 5; i++){
+            int e = i + 1;
+            System.out.println("Door with number " + e + " is " + door[i].getDoor());
+        }
+    }
 //.................................................................The work for array window
 public CarDoor[] window = {
         new CarDoor(),
@@ -153,8 +158,9 @@ public CarDoor[] window = {
         new CarDoor(),
         new CarDoor(),
 };
-    public void windows (int windowchoose){
-        if (windowchoose == 1 || windowchoose == 6 ){
+    public void windows (int windowchs){
+        int windowchoose = windowchs - 1;
+        if (windowchoose == 0 || windowchoose == 4 ){
             System.out.println("Frontal and rear windows do not open!");
         } else {
             int wrepeat = 1;
@@ -167,13 +173,13 @@ public CarDoor[] window = {
                 int choosewindow = scanner.nextInt();
                 switch (choosewindow) {
                     case 1:
-                        door[windowchoose].openwindow();
+                        window[windowchoose].openwindow();
                         break;
                     case 2:
-                        door[windowchoose].closewindow();
+                        window[windowchoose].closewindow();
                         break;
                     case 3:
-                        door[windowchoose].positionwindow();
+                        window[windowchoose].positionwindow();
                         break;
                     default:
                         System.out.println("Invalid number");
@@ -185,15 +191,13 @@ public CarDoor[] window = {
             }
         }
     }
-    /*public void numberwheel (){
-        //System.out.println("Do you want to add few wheels?");
-        System.out.println("How many wheels you want to add: ");
-        int newWheels = scanner.nextInt();
-        int x = 4 + newWheels;
-
-    }*/
+    public void windowShow (){
+        for (int i = 0; i < 5; i++){
+            int e = i + 1;
+            System.out.println("Window with number " + e + " is " + window[i].getWindow());
+        }
+    }
 //..................................................................
-
     public CarWheel[] wheels = {
             new CarWheel(),
             new CarWheel(),
@@ -248,31 +252,58 @@ public CarDoor[] window = {
 
     }
 
-
+    public void wheelRemove (){
+        this.removeWheel = 1;
+        System.out.println("The wheel was removed");
+    }
     public void allwheelsshow() {//
         System.out.println("To show information for all wheels: \n" +
                 "1 - Yes \n" +
                 "2 - No");
         int allinfo = scanner.nextInt();
         if (allinfo == 1) {
-            for (int i = 0; i < 4; i++) {
-                int iplus = i + 1;
-                System.out.println("Condition of " + iplus + " wheel - " + wheels[i].getCondition());
-            }
-        }else {
+            tireshow();
+        } else {
             System.out.println("ok");
-
         }
         System.out.println("To select other wheels?\n" +
                 "1 - Yes \n" +
                 "2 - No");
         int otherwheel = scanner.nextInt();
-        if (otherwheel == 1){
+        if (otherwheel == 1) {
             wheels();
-        } else if (otherwheel != 1){
+        } else if (otherwheel != 1) {
             System.out.println("Okay");
         }
     }
+
+    public void tireshow () {
+        if (this.removeWheel == 0) {
+            for (int i = 0; i < 4; i++) {
+                int iplus = i + 1;
+                System.out.println("Condition of " + iplus + " tire - " + wheels[i].getCondition());
+            }
+        } else if (this.removeWheel == 1){
+                System.out.println("The wheels is absent");
+        }
+
+    }
+    public void maxpossiblespeed (){
+        int possibSpeed;
+        if (this.nowpeoplle == 0){
+            possibSpeed = 0;
+        } else {
+            float min = Float.MIN_VALUE;
+            for (int i = 0; i < wheels.length; i++){
+                min = Math.min(min, this.wheels[i].getCondition());
+            }
+            System.out.println("min " + min);
+        }
+
+    }
+    //..............................................................Calculate the current possible maximum speed
+
 //.........................................................
+
 
 }
