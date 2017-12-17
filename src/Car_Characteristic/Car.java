@@ -4,16 +4,102 @@ import java.util.Scanner;
 
 public class Car {
     Scanner scanner = new Scanner(System.in);
-    /*private String dateofman;
+    private String dateofmade;
     private String engine;
     private int maxspeed;
     private int timetohundred;
     private int maxpeoplle;
     private int nowpeoplle;
-    private int speed;*/
-//....................................................
+    private int speed = 60;
+//.................................................... for date
+    public String getDateofmade (){
+        return dateofmade;
+    }
+    public void askdateofmade (){
+        System.out.println("Write date of manufacture ");
+        this.dateofmade = scanner.nextLine();
+    }
+    public void dateshow (){
+        System.out.println(getDateofmade() + " - date of manufacture of the car  ");
+    }
+//........................................................ask type engine
+    public String getEngine(){
+        return engine;
+    }
+    public void typeengine (){
+        System.out.println();
+        System.out.println("Write type for engine ");
+        this.engine = scanner.nextLine();
+    }
+    public void engineshow (){
+        System.out.println("Car's engine is " + getEngine());
+    }
+//...........................................................ask max speed
 
+    public int getMaxspeed(){
+        return maxspeed;
+    }
+    public void maxsp () {
+        System.out.println();
+        System.out.println("Write maximum speed of the car (km/h)");
+        this.maxspeed = scanner.nextInt();
+    }
+    public void maxspeedshow (){
+        System.out.println("Maximum speed is " + getMaxspeed() + "km/h ");
+    }
+//...............................................................ask current speed
+    public int getSpeed(){
+    return speed;
+    }
+    public void speedask () {
+        System.out.println();
+        System.out.println("Write current speed of the car (km/h)");
+        this.speed = scanner.nextInt();
+    }
+    public void speedShow (){
+        System.out.println("Current speed is " + getSpeed() + "km/h ");
+    }
+//...............................................................ask time to hundred
 
+    public int getTimetohundred(){
+        return timetohundred;
+    }
+    public void timeto100 () {
+        System.out.println();
+        System.out.println("Write acceleration time to one hundred (sec)");
+        this.timetohundred = scanner.nextInt();
+    }
+    public void time100Show (){
+        System.out.println("Acceleration time to one hundred is " + getTimetohundred() + "second ");
+    }
+//...............................................................ask maximum number of passengers
+    public int getMaxpeoplle(){
+    return maxpeoplle;
+    }
+    public void maxpeopl () {
+        System.out.println();
+        System.out.println("Write maximum number of passengers  ");
+        this.maxpeoplle = scanner.nextInt();
+    }
+    public void maxpeoplleShow (){
+        System.out.println("Maximum number of passengers is " + getMaxpeoplle());
+    }
+//..................................................................Number of passengers inside the car
+    public int getNowpeoplle(){
+    return nowpeoplle;
+    }
+    public void nowpeoplle () {
+        System.out.println();
+        System.out.println("Write number of passengers inside the car ");
+        this.nowpeoplle = scanner.nextInt();
+    }
+    public void pluspeoplle (){
+        int pluspas = this.nowpeoplle + 
+    }
+    public void nowpeoplleShow (){
+        System.out.println("Number of passengers inside the car is " + getNowpeoplle());
+    }
+//...............................................................
     /*public void numberwheel (){
         //System.out.println("Do you want to add few wheels?");
         System.out.println("How many wheels you want to add: ");
@@ -21,19 +107,29 @@ public class Car {
         int x = 4 + newWheels;
 
     }*/
+//..................................................................
+
     public CarWheel[] wheels = {
             new CarWheel(),
             new CarWheel(),
             new CarWheel(),
             new CarWheel(),
     };
-    public void tire (int numbertire){
+
+    public void wheels (){
+        System.out.println("Please, choose wheel \n" +
+                "(To write number wheel from 1 to the total number of wheels)");
+        int wchoose = scanner.nextInt();
+        System.out.println("Write the condition of the tire: \n" +
+                "(from 0,1 to 1)");
+        float statusk = scanner.nextFloat();
+        tire(wchoose, statusk);
+    }
+
+    public void tire (int numbertire, float status){
         int tireinarray = numbertire - 1;
             int reapetin = 1;
             while (reapetin == 1) {
-                System.out.println("Write the condition of the tire: \n" +
-                        "(from 0,1 to 1)");
-                float status = scanner.nextFloat();
                 wheels[tireinarray].setCondition(status);
                 System.out.println("Do you want to replace the tire to a new one? - 1 \n" +
                         "Erase the tire by? - 2\n" +
@@ -67,35 +163,33 @@ public class Car {
 
     }
 
-    public void wheels (){
-        System.out.println("Please, choose wheel \n" +
-                "(To write number wheel from 1 to the total number of wheels)");
-        int wchoose = scanner.nextInt();
-        tire(wchoose);
-        int reapetwheel = 1;
-        while (reapetwheel == 1) {
-            tire(wchoose);
-            System.out.println("To choose other wheel? \n" +
-                    "1- Yes \n" +
-                    "2 - No");
-            reapetwheel = scanner.nextInt();
+
+    public void allwheelsshow() {//
+        System.out.println("To show information for all wheels: \n" +
+                "1 - Yes \n" +
+                "2 - No");
+        int allinfo = scanner.nextInt();
+        if (allinfo == 1) {
+            for (int i = 0; i < 4; i++) {
+                int iplus = i + 1;
+                System.out.println("Condition of " + iplus + " wheel - " + wheels[i].getCondition());
             }
+        }else {
+            System.out.println("ok");
 
         }
-        public void allwheelsshow() {
-            System.out.println("To show information for other wheels: \n" +
-                    "1 - Yes \n" +
-                    "2 - No");
-            int allinfo = scanner.nextInt();
-            if (allinfo == 1) {
-                for (int i = 0; i < 4; i++) {
-                    int iplus = i + 1;
-                    System.out.println("Condition of " + iplus + " wheel - " + wheels[i].getCondition());
-                }
-            }else {
-                System.out.println("ok");
-            }
+        System.out.println("To select other wheels?\n" +
+                "1 - Yes \n" +
+                "2 - No");
+        int otherwheel = scanner.nextInt();
+        if (otherwheel == 1){
+            wheels();
+        } else if (otherwheel != 1){
+            System.out.println("Okay");
         }
+    }
+//.........................................................
+
 
     /*public void xdoor () {
         System.out.println("Please, write number of doors:");

@@ -4,17 +4,30 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Car car = new Car();
         System.out.println("Hi!");
+        car.askdateofmade();
+        car.typeengine();
+        car.maxsp();
+        car.timeto100();
+        car.maxpeopl();
+        car.nowpeoplle();
         System.out.println("what do you want to do? \n" +
-                "1 - Choose a door and window \n" +
-                "2 - Choose a wheel \n" +
-                "3 - Information about car");
+                "1 - Change current speed \n" +
+                "(60km/h is default) \n" +
+                "2 - To put a passenger in the car \n" +
+                "3 - Disembark a passenger from the car \n" +
+                "4 - Disembark all passengers from the car");
         Scanner scanner = new Scanner(System.in);
         int choose = scanner.nextInt();
         switch (choose){//switch, that choose task
             case 1:
+                car.speedask();
+                break;
+            case 2:
+
 //................................................................A call Cardoor
-                CarDoor cardoor1 = new CarDoor();
+                /*CarDoor cardoor1 = new CarDoor();
                 int repeat = 1;
                 while (repeat == 1) {
                     System.out.println("Do you want open door? - 1 \n" +
@@ -53,12 +66,9 @@ public class Main {
                             "2 - No");
                     repeat = scanner.nextInt();
                 }
-                break;
+                break;*/
 //............................................................................The call CarWheel
-            case 2:
-               Car car = new Car();
-               car.wheels();
-            case 3:
+
 
         }
 

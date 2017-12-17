@@ -9,6 +9,7 @@ public class CarWheel {
     public CarWheel (){
         this.condition = 1.0f;
     }
+
 //......................................................
     public float getCondition() {
         return condition;
