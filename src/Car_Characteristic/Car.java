@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Car {
     Scanner scanner = new Scanner(System.in);
-    private String dateofmade;
+    private String dateMade;
     private String engine;
     private int maxspeed;
     private int timetohundred;
@@ -13,11 +13,11 @@ public class Car {
     private int speed = 60;
 //.................................................... for date
     public String getDateofmade (){
-        return dateofmade;
+        return dateMade;
     }
     public void askdateofmade (){
         System.out.println("Write date of manufacture ");
-        this.dateofmade = scanner.nextLine();
+        this.dateMade = scanner.nextLine();
     }
     public void dateshow (){
         System.out.println(getDateofmade() + " - date of manufacture of the car  ");
@@ -275,75 +275,4 @@ public CarDoor[] window = {
     }
 //.........................................................
 
-
-    /*public void xdoor () {
-        System.out.println("Please, write number of doors:");
-        int xd = scanner.nextInt();
-        CarDoor[] doors = new CarDoor[xd];
-        for (int n = 0; n < xd; n++) { // 2. Задає елементи масиву
-           doors[n] = ;
-        }
-        System.out.println("Choose door: \n" +
-                "To choose driver's door - 1 \n" +
-                "To choose passenger front doors - 2 \n" +
-                "To choose trunk lid - 3 \n" +
-                "to choose other door of car \n" +
-                "(Write number of door from 3 to the total number of doors)");
-        int doorchoose = scanner.nextInt();
-        int cordoorchoose = doorchoose - 1;
-            int i = 0;
-            while (i < xd){
-
-                i++;
-
-            }
-
-        int repeat = 1;
-        while (repeat == 1) {
-            System.out.println("Do you want open door? - 1 \n" +
-                    "Do you want closed door? - 2 \n" +
-                    "Do you want to change the position of the door? - 3 \n" +
-                    "(to defeult is closed) \n" +
-                    "Do you want open window? - 4 \n" +
-                    "Do you want closed window? - 5 \n" +
-                    "Do you want to change the position of the wndow? - 6 \n" +
-                    "(to defeult is closed)");
-            int choosedoor = scanner.nextInt();
-            switch (choosedoor){
-                case 1:
-                    cardoor1.opendoor();
-                    break;
-                case 2:
-                    cardoor1.closeddoor();
-                    break;
-                case 3:
-                    cardoor1.positiondoor();
-                    break;
-                case 4:
-                    cardoor1.openwindow();
-                    break;
-                case 5:
-                    cardoor1.closewindow();
-                    break;
-                case 6:
-                    cardoor1.positionwindow();
-                    break;
-                default:
-                    System.out.println("Invalid number");
-            }
-            System.out.println("Choose the door and window again \n" +
-                    "1 - Yes \n" +
-                    "2 - No");
-            repeat = scanner.nextInt();
-        }
-    }
-    public CarDoor []window ={
-        new CarDoor(),
-        new CarDoor(),
-        new CarDoor(),
-        new CarDoor(),
-    };
-    public Car (){
-
-    }*/
 }
