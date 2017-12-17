@@ -118,8 +118,8 @@ public class Car {
         new CarDoor(),
     };
     public void doors (int doorchoose){
-        int repeate = 1;
-        while (repeate == 1) {
+        int drepeat = 1;
+        while (drepeat == 1) {
             System.out.println("Do you want open door? - 1 \n" +
                     "Do you want closed door? - 2 \n" +
                     "Do you want to change the position of the door? - 3 \n" +
@@ -141,7 +141,48 @@ public class Car {
             System.out.println("Choose the door  again \n" +
                     "1 - Yes \n" +
                     "2 - No");
-            repeate = scanner.nextInt();
+            drepeat = scanner.nextInt();
+        }
+    }
+//.................................................................The work for array window
+public CarDoor[] window = {
+        new CarDoor(),
+        new CarDoor(),
+        new CarDoor(),
+        new CarDoor(),
+        new CarDoor(),
+        new CarDoor(),
+};
+    public void windows (int windowchoose){
+        if (windowchoose == 1 || windowchoose == 6 ){
+            System.out.println("Frontal and rear windows do not open!");
+        } else {
+            int wrepeat = 1;
+            while (wrepeat == 1) {
+                System.out.println("Do you want open window? - 1 \n" +
+                        "Do you want closed window? - 2 \n" +
+                        "Do you want to change the position of the window? - 3 \n" +
+                        "Car have 6 window. \n" +
+                        "(to defeult all window is closed)");
+                int choosewindow = scanner.nextInt();
+                switch (choosewindow) {
+                    case 1:
+                        door[windowchoose].openwindow();
+                        break;
+                    case 2:
+                        door[windowchoose].closewindow();
+                        break;
+                    case 3:
+                        door[windowchoose].positionwindow();
+                        break;
+                    default:
+                        System.out.println("Invalid number");
+                }
+                System.out.println("Choose the window again \n" +
+                        "1 - Yes \n" +
+                        "2 - No");
+                wrepeat = scanner.nextInt();
+            }
         }
     }
     /*public void numberwheel (){

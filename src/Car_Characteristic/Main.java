@@ -21,7 +21,8 @@ public class Main {
                     "3 - Disembark a passenger from the car \n" +
                     "4 - Disembark all passengers from the car \n" +
                     "5 - Calculate the current possible maximum speed \n" +
-                    "6 - Choose door and act with it");
+                    "6 - Choose door and act with it \n" +
+                    "7 - Choose window and act with it");
             Scanner scanner = new Scanner(System.in);
             int choose = scanner.nextInt();
             switch (choose) {//switch, that choose task
@@ -42,9 +43,17 @@ public class Main {
                     break;
                 case 6:
                     System.out.println("Please, choose door \n" +
-                            "(To write number wheel from 1 to 5, where 5 is trunk lid)");
+                            "(To write number door from 1 to 5, where 5 is trunk lid)");
                     int doorchoose = scanner.nextInt();
                     car.doors(doorchoose);
+                    break;
+                case 7:
+                    System.out.println("Please, choose door \n" +
+                            "(Window is index 1 is windshield, window is index 6 is rear window. \n" +
+                            "They're closed always, so write a window number from 2 to 5)");
+                    int windowchoose = scanner.nextInt();
+                    car.windows(windowchoose);
+                    break;
             }
             System.out.println("Continue acts in this car? \n" +
                     "1 - Yes \n" +
